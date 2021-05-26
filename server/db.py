@@ -4,8 +4,9 @@ from pprint import pprint
 import datetime
 
 client = MongoClient("mongodb://localhost:27017/", connect=True)
+db = client['cryptodb']
 def insertBTCETHSignal(btc_usdLastPrice, eth_usdLastPrice, eth_btcLastPrice, eth_btcImpliedPrice, eth_btcProfitMargin, eth_btcProfitMarginPercent, isTradable, initalInvestment, Profit):
-    db = client['cryptodb']
+    
     collection = db['btc_ethSignal']
 
     new_record = {
@@ -24,7 +25,7 @@ def insertBTCETHSignal(btc_usdLastPrice, eth_usdLastPrice, eth_btcLastPrice, eth
     collection.insert_one(new_record)
 
 def insertBTCLTCSignal(btc_usdLastPrice, ltc_usdLastPrice, ltc_btcLastPrice, ltc_btcImpliedPrice, ltc_btcProfitMargin, ltc_btcProfitMarginPercent, isTradable, initalInvestment, Profit):
-    db = client['cryptodb']
+    
     collection = db['btc_ltcSignal']
 
     new_record = {
@@ -62,7 +63,7 @@ def insertBTCXRPSignal(btc_usdLastPrice, ltc_usdLastPrice, ltc_btcLastPrice, ltc
     collection.insert_one(new_record)
 
 def insertBTCETCSignal(btc_usdLastPrice, etc_usdLastPrice, etc_btcLastPrice, etc_btcImpliedPrice, etc_btcProfitMargin, etc_btcProfitMarginPercent, isTradable, initalInvestment, Profit):
-    db = client['cryptodb']
+    
     collection = db['btc_etcSignal']
 
     new_record = {
